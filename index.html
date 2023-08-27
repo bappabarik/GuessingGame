@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #a2a8d3;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        font-family: sans-serif;
+      }
+      .head h1 {
+        text-shadow: 1px 3px 5px rgba(89, 88, 88, 1);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      label, input{
+        margin: 7px;
+        padding: 10px;
+      }
+      input{
+        outline: none;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      .guessSubmit{
+        background-color: rgb(64, 235, 248);
+        color: rgb(2, 2, 2);
+        cursor: pointer;
+      }
+      .guessSubmit:hover{
+        background-color: rgb(3, 195, 209);
+        transition: 0.5s;
+      }
+      .resultParas{
+        text-align: left;
+      }
+      #newGame{
+        cursor: pointer;
+      }
+      .lastResult{
+        background-color: #f8c600;
+        padding: 5px 5px;
+        border-radius: 100%;
+      }
+      .button{
+        text-align: center;
+        margin: auto;
+      }
+      button{
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      .guessvals{
+        background-color: rgb(3, 209, 34);
+        margin: 2px;
+        display: inline-block;
+        padding: 5px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>Number Guessing Game</h1>
+        <p>
+          <mark
+            style="
+              color: rgb(0, 0, 0);
+              background-color: #f8c600;
+              padding: 5px;
+              border-radius: 7px;
+            "
+            >Try to guess a number between 1 to 100.</mark
+          >
+        </p>
+        <p>
+          <mark
+            style="
+              color: rgb(0, 0, 0);
+              background-color: #f8c600;
+              padding: 5px;
+              border-radius: 7px;
+            "
+            >You have 10 attempts to guess the right number.</mark
+          >
+        </p>
+      </div>
+      <div class="main">
+        <form class="form">
+          <label for="guessField" id="guess"> <h3>Guess a number </h3></label>
+          <input type="text" id="guessField" class="guessField" />
+          <input
+            type="submit"
+            id="sub"
+            value="Submit Guess"
+            class="guessSubmit"
+          />
+        </form>
+      </div>
+      <div class="resultParas">
+        <p>Previous Guesses: <span class="guesses"></span></p>
+        <p>Guesses Remaining: <span class="lastResult">10</span></p>
+        <p class="lowOrHigh"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
